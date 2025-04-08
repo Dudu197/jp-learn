@@ -11,28 +11,43 @@
   </style>
 </head>
 <body>
-  <div class="container" id="home">
-    <h2>Select Kana Type</h2>
-    <button onclick="startGame('hiragana')">Hiragana</button>
-    <button onclick="startGame('katakana')">Katakana</button>
+  <div class="content">
+    <div class="container" id="home">
+      <h2>Select Kana Type</h2>
+      <p class="instructions">
+        👋 Welcome! This game helps you practice reading Japanese kana characters.<br /><br />
+        ➤ Select <strong>Hiragana</strong> or <strong>Katakana</strong>.<br />
+        ➤ A random character will appear — type its <strong>romaji</strong> (Latin spelling).<br />
+        ➤ Press <strong>Enter</strong> or click <strong>Submit</strong>.<br />
+        ➤ Get feedback instantly. No repeats — clear all characters to win!<br /><br />
+        Have fun learning! 🎌
+      </p>
+      <button onclick="startGame('hiragana')">Hiragana</button>
+      <button onclick="startGame('katakana')">Katakana</button>
+    </div>
+
+    <div class="container" id="game" style="display: none;">
+      <div class="kana" id="kanaChar"></div>
+      <input type="text" id="answerInput" placeholder="Type the romaji" />
+      <br />
+      <button onclick="submitAnswer()" id="submitBtn">Submit</button>
+      <div class="feedback" id="feedback"></div>
+      <div class="score" id="score">Correct: 0</div>
+      <button class="home" onclick="goHome()">Back to Home</button>
+    </div>
+
+    <div class="container" id="endScreen" style="display: none;">
+      <h2>Game Over!</h2>
+      <p id="finalScore"></p>
+      <button class="home" onclick="goHome()">Back to Home</button>
+    </div>
   </div>
 
-  <div class="container" id="game" style="display: none;">
-    <div class="kana" id="kanaChar"></div>
-    <input type="text" id="answerInput" placeholder="Type the romaji" />
-    <br />
-    <button onclick="submitAnswer()" id="submitBtn">Submit</button>
-    <div class="feedback" id="feedback"></div>
-    <div class="score" id="score">Correct: 0</div>
-    <button class="home" onclick="goHome()">Back to Home</button>
-  </div>
+  <footer class="footer">
+    <p>Thanks for playing! 🌸 Made with love for Japanese learners.<br />
+    <a href="https://github.com/Dudu197/jp-learn" target="_blank">View on GitHub</a></p>
+  </footer>
 
-  <div class="container" id="endScreen" style="display: none;">
-    <h2>Game Over!</h2>
-    <p id="finalScore"></p>
-    <button class="home" onclick="goHome()">Back to Home</button>
-  </div>
-
-  <script type="" src="game.js"></script>
+  <script type="text/javascript" src="game.js"></script>
 </body>
 </html>
